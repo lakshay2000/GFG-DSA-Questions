@@ -49,7 +49,12 @@ void patternsearch1(string &s, string &pat, int n, int m)
     }
 }
 
-int main()
+// works better in general casses but has O(n^2) in worst case
+
+// it compares the hash values of pattern
+void rabdinKarp()
+
+    int main()
 {
     string s = "geeksforgeeks";
 
