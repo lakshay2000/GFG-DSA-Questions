@@ -45,21 +45,29 @@ int left(string s1)
     return -1;
 }
 
-int visit(string s1)
+int non(string s1)
 {
+    int f1[CHAR];
+    fill_n(f1, CHAR, -1);
 
-    bool visit[CHAR] = {false};
-
-    int res = -1;
-    for (int i = s1.length(); i >= 0; i--)
+    for (int i = 0; i < s1.length(); i++)
     {
-        if (visit[s1[i]])
+        if (f1[s1[i]] == -1)
         {
-            res = i;
+            f1[s1[i]] = i;
         }
         else
         {
-            visit[s1[i]] = true;
+            f1[s1[i]] = -2;
+        }
+    }
+    int res = INT_MAX;
+
+    for (int i = 0; i < CHAR; i++)
+    {
+        if (f1[i] >= 0)
+        {
+            res = min(res, f1[i]);
         }
     }
     return res;
@@ -71,7 +79,10 @@ int main()
 
     cout << leftmost(s1) << endl;
     cout << left(s1) << endl;
-    cout << visit(s1) << endl;
+    // cout << visit(s1) << endl;
+    cout << non(s1) << endl;
+
+    int hello[5] = {2};
 
     return 0;
 }

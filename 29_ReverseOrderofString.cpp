@@ -59,7 +59,7 @@ int main()
 
     int n = s.length();
 
-    // reverse(s, n);
+    reverse(s, n);
     cout << s;
 
     order_reverse(s, n);
