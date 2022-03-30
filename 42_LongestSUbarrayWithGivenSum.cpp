@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-bool longestsubarray(int *arr, int n, int sum)
+int longestsubarray(int *arr, int n, int sum)
 {
     unordered_map<int, int> m;
 
@@ -15,18 +15,24 @@ bool longestsubarray(int *arr, int n, int sum)
         {
             res = i + 1;
         }
-        if (m.find(pre_sum) != m.end())
+        if (m.find(pre_sum) == m.end())
         {
+            m.insert({pre_sum, i});
+        }
+        if (m.find(pre_sum - sum) != m.end())
+        {
+            res = max(res, i - m[pre_sum - sum]);
         }
     }
+    return res;
 }
 
 int main()
 {
-    int arr[] = {8, 3, 1, 5, -6, 6, 2, 2};
+    int arr[] = {1, -1, 1, 1, 1, -1, -1};
     int n = sizeof(arr) / sizeof(arr[0]);
 
-    cout << longestsubarray(arr, n, 4);
+    cout << longestsubarray(arr, n, 0);
 
     return 0;
 }

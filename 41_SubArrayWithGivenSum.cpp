@@ -53,8 +53,8 @@ int main()
     int arr[] = {3, 1, 0, 1, 8, 2, 3, 6};
     int n = sizeof(arr) / sizeof(arr[0]);
 
-    cout << sumzero(arr, n, 5);
-    cout << morebenifit(arr, n, 27);
+    // cout << sumzero(arr, n, 5);
+    cout << morebenifit(arr, n, 19);
 
     return 0;
 }
