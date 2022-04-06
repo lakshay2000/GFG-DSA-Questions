@@ -39,7 +39,7 @@ int longestsubarray(int *arr, int n)
 
 int main()
 {
-    int arr[] = {1, 0, 1, 1, 1, 0, 0};
+    int arr[] = {0, 1, 0, 0, 1, 1, 0, 1, 0, 1};
     int n = sizeof(arr) / sizeof(arr[0]);
 
     cout << longestsubarray(arr, n);
